@@ -1,4 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 .titulo{
     color:white;
+    margin-top: 35px;
+}
+
+.imgTitulo{
+    width: 128px;
+    height: 128px;
+}
+
+.imgMenu{
+    width: 24px;
+    height: 24px;
+}
+
+.container-primary{
+    background-color: lightgray;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
 }
