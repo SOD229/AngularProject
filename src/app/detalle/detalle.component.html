@@ -1,0 +1,31 @@
+<div class="modal fade" id="dlgProducto" role="dialog" *ngIf="producto">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div class="row display-flex">
+          <h4 class="modal-title col-lg-6">{{producto.nombre}}</h4>
+          <p class="col-lg-4"><strong>{{producto.precio}} MXN$</strong></p>
+          <div class="col-lg-2">
+            <a class="badge btn btn-primary" data-dismiss="modal" (click)="addCarrito()">
+              <img src="assets/ic_add_cart_white.svg" alt="agregar" class="imgMenu">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+          <img class="img-responsive" src="{{producto.urlImagen}}" alt="img">
+          <label><strong>Descripción:</strong></label><p>{{producto.detalle.descripcion}}</p>
+          <p *ngIf="producto.detalle.envioGratis"><strong>Envío Gratis</strong></p>
+          <label><strong>Lanzamiento:</strong></label><p>{{producto.detalle.fechaLanzamiento}}</p>
+          <!--label><strong>categoria:</strong><p>{{producto.detalle.categoria}}</p></label-->
+          <label><strong>Valoraciones:</strong></label> <p>{{producto.detalle.numValoraciones}}</p>
+          <label><strong>Puntuación:</strong></label><p>{{producto.detalle.valoracion}}</p>
+      </div>
+      <div class="modal-footer">
+          <!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button-->
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addCarrito()">Agregar a Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>

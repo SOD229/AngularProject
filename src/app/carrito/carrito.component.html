@@ -1,0 +1,30 @@
+<div class="page-header">
+    <h1 *ngIf="carrito.length>0">Elementos agregados al carrito</h1>
+    <h1 *ngIf="carrito.length==0">El carrito está vacío</h1>
+</div>
+<div class="scroll-container" *ngIf="carrito.length>0">
+    <ul class="tabla-carrito list-group">
+        <a class="list-group-item active">
+            <div class="row display-flex">
+                <div class="col-carrito col-xs-4 col-md-4">Producto</div>
+                <div class="col-carrito col-xs-3 col-md-4">Precio</div>
+                <div class="col-carrito col-xs-3">Envío gratis</div>
+                <div class="col-xs-2 col-md-1"></div>
+            </div>
+        </a>
+        <elemento-carrito [idProd]="id" [indice]="carrito.indexOf(id)" *ngFor="let id of carrito">Cargando...</elemento-carrito>
+        <a class="list-group-item">
+            <div class="row display-flex">
+                <div class="col-carrito col-xs-12 col-total"><strong>Total: {{carritoService.total}}</strong></div>
+            </div>
+        </a>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <a [routerLink]="['../productos/0']" class="btn btn-danger">Ir a tienda</a>
+    </div>
+    <div class="col-sm-12 col-md-6" *ngIf="carritoService.elementos.length>0">
+        <a [routerLink]="['../compra']" class="btn btn-success pull-right">¡Comprar Ahora!</a>
+    </div>
+</div>

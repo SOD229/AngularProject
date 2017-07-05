@@ -1,0 +1,22 @@
+.col-carrito{
+    text-align: center;
+    overflow: hidden;
+}
+
+.col-total{
+    text-align: right;
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.col-carrito div{
+    margin: auto;
+}
+
+.scroll-container{
+    overflow: auto;
+}
+
+.tabla-carrito{
+    min-width: 350px;    
+}

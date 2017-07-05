@@ -2,14 +2,23 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
-    /*background-color: #297FB8*/
-    background-color: #CCCCCC;
+    background-color: #297FB8;
+    /*background-color: #CCCCCC;*/
     overflow: hidden;
     padding: 15px;
     border-radius: 5px;
-    /*box-shadow: 10px 10px 5px #888888;*/
+    box-shadow: 10px 10px 5px #888888;
 }
 
 .prev-producto:hover{
-    background-color: #DDDDDD;
+    background-color: #398FC8;
+    border: 2px solid black;
+}
+
+.sm-info{
+    margin: 10px;
+}
+
+.text-info strong{
+    font-size: 1.3em;
 }

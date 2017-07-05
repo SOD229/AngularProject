@@ -1,0 +1,15 @@
+<a class="list-group-item" *ngIf="producto!=null && producto!=undefined">
+    <div class="row display-flex">
+        <div class="col-carrito col-xs-4 col-md-4"><div>{{producto.nombre}}</div></div>
+        <div class="col-carrito col-xs-3 col-md-4"><div>{{producto.precio}} MXN$</div></div>
+        <div class="col-carrito col-xs-3">
+            <div *ngIf="producto.detalle.envioGratis==true">Sí</div>
+            <div *ngIf="producto.detalle.envioGratis==false">No</div>
+        </div>
+        <div class="col-carrito col-xs-2 col-md-1">
+            <button class="btn-del-carr btn btn-danger btn-xs" (click)="eliminar()">
+                <img src="assets/ic_del_cart_white.svg" alt="eliminar" class="imgMenu">
+            </button>
+        </div>
+    </div>
+</a>
