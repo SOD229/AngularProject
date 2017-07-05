@@ -18,6 +18,7 @@ import { PedidosService }   from './pedidos.service';
 import {CategoriaPipe}  from './categoria.pipe';
 import { CompraComponent } from './compra/compra.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { ElementoPedidoComponent } from './elemento-pedido/elemento-pedido.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     CategoriaPipe,
     CompraComponent,
     PedidosComponent,
+    ElementoPedidoComponent,
   ],
   imports: [
     routing,

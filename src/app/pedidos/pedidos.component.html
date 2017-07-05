@@ -3,15 +3,17 @@
     <h1 *ngIf="pedidos.length==0">No hay pedidos</h1>
 </div>
 <div class="scroll-container" *ngIf="pedidos.length>0">
-    <ul class="tabla-carrito list-group">
+    <ul class="tabla-pedidos list-group">
         <a class="list-group-item active">
             <div class="row display-flex">
-                <div class="col-carrito col-xs-4 col-md-4">Nombre</div>
-                <div class="col-carrito col-xs-3 col-md-4">Dirección</div>
-                <div class="col-carrito col-xs-3">Artículos</div>
-                <div class="col-xs-2 col-md-1">Total</div>
+                <div class="col-pedido col-xs-4 col-md-4">Nombre</div>
+                <div class="col-pedido col-xs-3 col-md-4">Dirección</div>
+                <div class="col-pedido col-xs-2 col-md-2">Artículos</div>
+                <div class="col-pedido col-xs-3 col-md-2">Total</div>
             </div>
         </a>
-        
+        <app-elemento-pedido [pedido]="p" *ngFor="let p of pedidos"></app-elemento-pedido>
     </ul>
 </div>
+
+<button class="btn btn-success pull-right" (click)="limpiar()">Limpiar pedidos</button>

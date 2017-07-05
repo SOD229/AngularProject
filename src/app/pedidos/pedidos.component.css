@@ -1,0 +1,13 @@
+.col-pedido{
+    text-align: center;
+    overflow: hidden;
+}
+
+.scroll-container{
+    overflow: auto;
+}
+
+
+.tabla-pedidos{
+    min-width: 350px;    
+}

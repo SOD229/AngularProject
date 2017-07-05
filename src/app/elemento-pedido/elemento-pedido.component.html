@@ -1,0 +1,8 @@
+<a class="list-group-item" *ngIf="pedido!=null && pedido!=undefined">
+    <div class="row display-flex">
+        <div class="col-pedido col-xs-4 col-md-4"><div>{{pedido.nombre}} {{pedido.apellidos}}</div></div>
+        <div class="col-pedido col-xs-3 col-md-4"><div>{{pedido.direccion}}</div></div>
+        <div class="col-pedido col-xs-2 col-md-2"><div>{{pedido.numArticulos}}</div></div>
+        <div class="col-pedido col-xs-3 col-md-2">${{pedido.total}} MXN</div>
+    </div>
+</a>

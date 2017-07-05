@@ -8,15 +8,13 @@ export class ProductoService {
   constructor(private http:Http){}
 
     getProductos(){
-        //return this.http.get('http://academica.uaslp.mx/apps/servicios/tienda/servicio.svc/productos')
-        return this.http.get('https://sod229.github.io/angularStore.github.io/products/productos')
+        return this.http.get('http://academica.uaslp.mx/apps/servicios/tienda/servicio.svc/productos')
         .toPromise().then(resp => resp.json())
         .catch(this.error);
     }
 
     getProducto(id:number){
-      //return this.http.get('http://academica.uaslp.mx/apps/servicios/tienda/servicio.svc/productos/'+id)
-      return this.http.get('https://sod229.github.io/angularStore.github.io/products/'+id)
+      return this.http.get('http://academica.uaslp.mx/apps/servicios/tienda/servicio.svc/productos/'+id)
       .toPromise().then(resp => resp.json())
       .catch(this.error);
     }

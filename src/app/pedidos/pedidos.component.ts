@@ -17,4 +17,8 @@ export class PedidosComponent implements OnInit {
     this.pedidos = this.pedidosService.getPedidos();
   }
 
+  limpiar(){
+    this.pedidosService.limpiar();
+    this.pedidos = this.pedidosService.getPedidos();
+  }
 }
