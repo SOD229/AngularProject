@@ -32,9 +32,17 @@ export class CarritoService
     }
 
     recover(){
+        this.elementos = new Array<number>();
         let item:string = localStorage.getItem("c");
         if(item!=null && item!="")
             item.split(",").forEach(elem => this.elementos.push(Number(elem)));
         this.total = Number(localStorage.getItem("ct"));
+    }
+
+    vaciarCarrito(){
+        this.elementos = new Array<number>();
+        this.total = 0;
+        localStorage.removeItem("c");
+        localStorage.removeItem("ct");
     }
 }

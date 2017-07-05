@@ -23,8 +23,8 @@
               <li><a [routerLink]="['productos/0']">Todas los productos</a></li>
             </ul>
           </li>
-          <li><a>Pedidos</a></li>
-          <li><a [routerLink]="['carrito']"><img src="assets/ic_cart_white.svg" class="imgMenu"> {{carritoService.elementos.length}} Items</a></li>
+          <li><a [routerLink]="['pedidos']">Pedidos <span class="badge">{{pedidoService.pedidos.length}}</span> </a></li>
+          <li><a [routerLink]="['carrito']"><img src="assets/ic_cart_white.svg" class="imgMenu"> <span class="badge"> {{carritoService.elementos.length}}</span></a></li>
         </ul>
       </nav>
     </div>

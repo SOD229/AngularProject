@@ -13,9 +13,11 @@ import {ElemCarritoComponent} from './elemento-carrito/elemento-carrito.componen
 
 import { ProductoService }  from './producto.service';
 import { CarritoService }   from './carrito.service';
+import { PedidosService }   from './pedidos.service';
 
 import {CategoriaPipe}  from './categoria.pipe';
 import { CompraComponent } from './compra/compra.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { CompraComponent } from './compra/compra.component';
     ElemCarritoComponent,
     CategoriaPipe,
     CompraComponent,
+    PedidosComponent,
   ],
   imports: [
     routing,
@@ -35,7 +38,7 @@ import { CompraComponent } from './compra/compra.component';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [ProductoService, CarritoService],
+  providers: [ProductoService, CarritoService, PedidosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

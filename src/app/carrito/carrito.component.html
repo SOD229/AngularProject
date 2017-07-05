@@ -21,10 +21,10 @@
     </ul>
 </div>
 <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-xs-12 col-sm-6">
         <a [routerLink]="['../productos/0']" class="btn btn-danger">Ir a tienda</a>
     </div>
-    <div class="col-sm-12 col-md-6" *ngIf="carritoService.elementos.length>0">
-        <a [routerLink]="['../compra']" class="btn btn-success pull-right">¡Comprar Ahora!</a>
+    <div class="col-xs-12 col-sm-6 col-sm-push-3 col-md-push-4" *ngIf="carritoService.elementos.length>0">
+        <a [routerLink]="['../compra']" class="btn btn-success">¡Comprar Ahora!</a>
     </div>
 </div>

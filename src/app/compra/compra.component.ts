@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {CarritoService} from '../carrito.service';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import { CarritoService } from '../carrito.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PedidosService } from '../pedidos.service';
+import { Pedido } from '../pedido';
 
 @Component({
   selector: 'app-compra',
@@ -20,7 +22,7 @@ export class CompraComponent implements OnInit
   mesValid: Boolean = true;
   yearValid: Boolean = true;
 
-  constructor(private carService: CarritoService, private router:Router) { 
+  constructor(private carService: CarritoService, private router:Router, private pedidoService: PedidosService) { 
     this.formulario = new FormGroup({
       inputName: new FormControl('',[Validators.required,Validators.minLength(5)]),
       inputLastName: new FormControl('',[Validators.required,Validators.minLength(5)]),
@@ -46,6 +48,20 @@ export class CompraComponent implements OnInit
     this.cvvValid = form.controls['inputCVV'].valid;
     this.mesValid = form.controls['inputMes'].valid;
     this.yearValid = form.controls['inputYear'].valid;
+
+    if(form.valid)
+    {
+      this.pedidoService.addPedido(new Pedido
+      (
+        form.controls['inputName'].value,
+        form.controls['inputLastName'].value,
+        form.controls['inputDir'].value,
+        this.carService.getNumElementos(),
+        this.carService.total
+      ));
+      this.carService.vaciarCarrito();
+      this.router.navigate(['pedidos']);
+    }
   }
 
 }
